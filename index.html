@@ -3,26 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aviation Accident Analysis</title>
+    <title>Aero Insights: Aviation Safety Analysis</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Project Header -->
-    <header>
-        <h1>Aviation Accident Insights</h1>
+    <!-- Hero Section with Airplane Image -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Aero Insights: Aviation Safety Analysis</h1>
+            <p>Uncovering Patterns to Enhance Aviation Safety</p>
+        </div>
     </header>
 
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#powerbi">Power BI Analysis</a></li>
+            <li><a href="#plotly">Plotly Analysis</a></li>
+            <li><a href="#" id="dark-mode-toggle"><i class="fas fa-moon"></i> Dark Mode</a></li>
+        </ul>
+    </nav>
+
     <!-- Introduction Section -->
-    <section class="intro">
+    <section id="intro" class="intro section">
         <h2>Introduction</h2>
-        <p>Welcome to Aviation Accident Insights, a comprehensive analysis of aviation accidents and their relationship with airport traffic data. This project aims to uncover patterns and trends that can inform safety improvements in the aviation industry.</p>
-        <p>We integrated two datasets: one detailing aviation accidents (SDV_Project_Dataset.csv) and another on airport traffic (Aiports2.csv). Through data cleaning, transformation, and visualization, we explore key questions about accident severity, locations, aircraft types, and traffic impacts. This webpage presents our findings through interactive visualizations, combining Power BI dashboards and Plotly charts to provide a dynamic storytelling experience.</p>
+        <p>Welcome to Aero Insights, where we dive deep into aviation accidents and airport traffic data to uncover patterns that can make flying safer. We combined two datasets—one on accidents and another on airport traffic—to explore trends and risks.</p>
+        <p>Using Power BI and Plotly, we created interactive visualizations to answer key questions about accident severity, locations, weather impacts, and more. Scroll down to explore our findings!</p>
     </section>
 
     <!-- Power BI Section (Q1-Q5) -->
-    <section class="visualization-section">
+    <section id="powerbi" class="visualization-section section">
         <h2>Power BI Analysis (Questions 1-5)</h2>
-        <p>The following questions were explored using a Power BI dashboard, providing an overview of accident trends and factors:</p>
+        <p>Our Power BI dashboard provides an overview of accident trends and influencing factors:</p>
         <ul>
             <li><strong>Q1:</strong> How do accidents vary over time?</li>
             <li><strong>Q2:</strong> Which weather conditions lead to more severe accidents?</li>
@@ -30,52 +44,162 @@
             <li><strong>Q4:</strong> Which aircraft maker has the most accidents?</li>
             <li><strong>Q5:</strong> How does engine count influence accident severity?</li>
         </ul>
-        <div class="visualization">
+        <div class="visualization-card">
+            <iframe title="Dashboard" src="https://app.powerbi.com/reportEmbed?reportId=beb52390-4b56-4ff6-9df5-90446617c5d0&autoAuth=true&ctid=70de1992-07c6-480f-a318-a1afcba03983" frameborder="0" allowfullscreen></iframe>
+        </div>
 
-            <iframe title="Dashboard" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=beb52390-4b56-4ff6-9df5-90446617c5d0&autoAuth=true&ctid=70de1992-07c6-480f-a318-a1afcba03983" frameborder="0" allowFullScreen="true"></iframe>
+        <!-- Key Insights for Q1-Q5 -->
+        <div class="insights">
+            <h3><i class="fas fa-lightbulb"></i> Key Insights (Power BI)</h3>
+            <button class="collapsible">Toggle Insights</button>
+            <div class="insights-content">
+                <ul>
+                    <li><strong>Q1:</strong> Accidents peaked in the 1980s, likely due to increased air traffic and less stringent safety regulations, then declined with improved standards.</li>
+                    <li><strong>Q2:</strong> IMC conditions (instrument meteorological conditions) were linked to higher severity, highlighting weather as a key risk factor.</li>
+                    <li><strong>Q3:</strong> California and Texas topped the list for accident locations, reflecting their busy airspaces.</li>
+                    <li><strong>Q4:</strong> Cessna aircraft had the most accidents, possibly due to their widespread use in general aviation.</li>
+                    <li><strong>Q5:</strong> Single-engine aircraft showed higher severity in accidents, suggesting design or operational risks.</li>
+                </ul>
+            </div>
         </div>
     </section>
 
     <!-- Plotly Section (Q6-Q10) -->
-    <section class="visualization-section">
+    <section id="plotly" class="visualization-section section">
         <h2>Plotly Analysis (Questions 6-10)</h2>
-        <p>The following questions dive deeper into specific relationships using interactive Plotly visualizations:</p>
+        <p>These interactive Plotly visualizations dive deeper into specific relationships:</p>
 
         <div class="visualization-item">
             <h3>Q6: How do combinations of purpose of flight and airport size influence accident severity?</h3>
-            <div class="visualization">
+            <div class="visualization-card">
                 <iframe src="q6_purpose_airport_severity.html"></iframe>
+            </div>
+            <div class="insights">
+                <h4><i class="fas fa-lightbulb"></i> Key Insight</h4>
+                <button class="collapsible">Toggle Insight</button>
+                <div class="insights-content">
+                    <p>Personal flights at large airports had the highest average severity (e.g., 15 injuries), suggesting a need for targeted safety measures in this scenario.</p>
+                </div>
             </div>
         </div>
 
         <div class="visualization-item">
             <h3>Q7: What’s the seasonal variation in severity of accidents at high-traffic airports?</h3>
-            <div class="visualization">
+            <div class="visualization-card">
                 <iframe src="q7_seasonal_severity.html"></iframe>
+            </div>
+            <div class="insights">
+                <h4><i class="fas fa-lightbulb"></i> Key Insight</h4>
+                <button class="collapsible">Toggle Insight</button>
+                <div class="insights-content">
+                    <p>Summer months showed higher severity at high-traffic airports, possibly due to increased traffic and weather challenges like thunderstorms.</p>
+                </div>
             </div>
         </div>
 
         <div class="visualization-item">
             <h3>Q8: How does traffic intensity impact accident severity across different airport sizes?</h3>
-            <div class="visualization">
+            <div class="visualization-card">
                 <iframe src="q8_traffic_intensity.html"></iframe>
+            </div>
+            <div class="insights">
+                <h4><i class="fas fa-lightbulb"></i> Key Insight</h4>
+                <button class="collapsible">Toggle Insight</button>
+                <div class="insights-content">
+                    <p>Small airports had more severe accidents at moderate traffic intensity (100-200 passengers per flight), indicating potential resource constraints.</p>
+                </div>
             </div>
         </div>
 
         <div class="visualization-item">
             <h3>Q9: Are certain phases of flight more prone to fatal accidents?</h3>
-            <div class="visualization">
+            <div class="visualization-card">
                 <iframe src="q9_phase_fatalities.html"></iframe>
+            </div>
+            <div class="insights">
+                <h4><i class="fas fa-lightbulb"></i> Key Insight</h4>
+                <button class="collapsible">Toggle Insight</button>
+                <div class="insights-content">
+                    <p>Cruise phase was the deadliest, with 20% of accidents being fatal, highlighting the need for enhanced safety protocols during this phase.</p>
+                </div>
             </div>
         </div>
 
         <div class="visualization-item">
-            <h3>Q10: Does flight distance correlate with accident likelihood or severity?</h3>
-            <div class="visualization">
-                <iframe src="q10_distance_severity.html"></iframe>
+            <h3>Q10: Which U.S. states experience the highest number of aviation accidents, and how are these incidents geographically distributed?</h3>
+            <div class="visualization-card">
+                <iframe src="accident_heatmap_by_state.html"></iframe>
+            </div>
+            <div class="insights">
+                <h4><i class="fas fa-lightbulb"></i> Key Insight</h4>
+                <button class="collapsible">Toggle Insight</button>
+                <div class="insights-content">
+                    <p>California, Texas, and Florida had the most accidents, reflecting busy airspaces, while states like Alaska showed higher severity, possibly due to weather and terrain.</p>
+                </div>
             </div>
         </div>
     </section>
+    <!-- Chatbot Widget -->
+    <section id="chatbot" class="section">
+    <h2>Talk to AeroBot 🤖</h2>
+    <p>Ask aviation-related questions or insights from the data.</p>
+    <textarea id="userInput" placeholder="Type your question..." rows="3" style="width: 100%; padding: 10px;"></textarea>
+    <button onclick="sendToChatbot()" style="margin-top: 10px; padding: 10px 20px; background-color: #0052cc; color: white; border: none; border-radius: 5px; cursor: pointer;">Send</button>
+    <div id="chat-response" style="margin-top: 15px; background-color: #f0f0f0; padding: 15px; border-radius: 5px;"></div>
+    </section>
 
+    <!-- Footer -->
+    <footer>
+        <p>Created by Group 20 | CSCE 5320 Scientific Data Visualization | Spring 2025</p>
+        <p><a href="https://github.com/pvs156/AeroInsights" target="_blank">View on GitHub</a></p>
+        <button id="download-pdf">Download as PDF</button>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        // Collapsible Insights
+        document.querySelectorAll('.collapsible').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+                button.textContent = content.style.display === 'block' ? 'Hide Insight' : 'Show Insight';
+            });
+        });
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const icon = darkModeToggle.querySelector('i');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+            darkModeToggle.textContent = document.body.classList.contains('dark-mode') ? ' Light Mode' : ' Dark Mode';
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Download PDF
+        document.getElementById('download-pdf').addEventListener('click', () => {
+            const element = document.body;
+            html2pdf().from(element).set({
+                margin: 1,
+                filename: 'Aero_Insights_Report.pdf',
+                html2canvas: { scale: 2 },
+                jsPDF: { orientation: 'portrait', unit: 'in', format: 'letter', compressPDF: true }
+            }).save();
+        });
+    </script>
+    
 </body>
 </html>
