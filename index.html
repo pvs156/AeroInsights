@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviation Accident Analysis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Project Header -->
+    <header>
+        <h1>Aviation Accident Insights</h1>
+    </header>
+
+    <!-- Introduction Section -->
+    <section class="intro">
+        <h2>Introduction</h2>
+        <p>Welcome to Aviation Accident Insights, a comprehensive analysis of aviation accidents and their relationship with airport traffic data. This project aims to uncover patterns and trends that can inform safety improvements in the aviation industry.</p>
+        <p>We integrated two datasets: one detailing aviation accidents (SDV_Project_Dataset.csv) and another on airport traffic (Aiports2.csv). Through data cleaning, transformation, and visualization, we explore key questions about accident severity, locations, aircraft types, and traffic impacts. This webpage presents our findings through interactive visualizations, combining Power BI dashboards and Plotly charts to provide a dynamic storytelling experience.</p>
+    </section>
+
+    <!-- Power BI Section (Q1-Q5) -->
+    <section class="visualization-section">
+        <h2>Power BI Analysis (Questions 1-5)</h2>
+        <p>The following questions were explored using a Power BI dashboard, providing an overview of accident trends and factors:</p>
+        <ul>
+            <li><strong>Q1:</strong> How do accidents vary over time?</li>
+            <li><strong>Q2:</strong> Which weather conditions lead to more severe accidents?</li>
+            <li><strong>Q3:</strong> What are the top locations for accidents?</li>
+            <li><strong>Q4:</strong> Which aircraft maker has the most accidents?</li>
+            <li><strong>Q5:</strong> How does engine count influence accident severity?</li>
+        </ul>
+        <div class="visualization">
+
+            <iframe title="Dashboard" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=beb52390-4b56-4ff6-9df5-90446617c5d0&autoAuth=true&ctid=70de1992-07c6-480f-a318-a1afcba03983" frameborder="0" allowFullScreen="true"></iframe>
+        </div>
+    </section>
+
+    <!-- Plotly Section (Q6-Q10) -->
+    <section class="visualization-section">
+        <h2>Plotly Analysis (Questions 6-10)</h2>
+        <p>The following questions dive deeper into specific relationships using interactive Plotly visualizations:</p>
+
+        <div class="visualization-item">
+            <h3>Q6: How do combinations of purpose of flight and airport size influence accident severity?</h3>
+            <div class="visualization">
+                <iframe src="q6_purpose_airport_severity.html"></iframe>
+            </div>
+        </div>
+
+        <div class="visualization-item">
+            <h3>Q7: What’s the seasonal variation in severity of accidents at high-traffic airports?</h3>
+            <div class="visualization">
+                <iframe src="q7_seasonal_severity.html"></iframe>
+            </div>
+        </div>
+
+        <div class="visualization-item">
+            <h3>Q8: How does traffic intensity impact accident severity across different airport sizes?</h3>
+            <div class="visualization">
+                <iframe src="q8_traffic_intensity.html"></iframe>
+            </div>
+        </div>
+
+        <div class="visualization-item">
+            <h3>Q9: Are certain phases of flight more prone to fatal accidents?</h3>
+            <div class="visualization">
+                <iframe src="q9_phase_fatalities.html"></iframe>
+            </div>
+        </div>
+
+        <div class="visualization-item">
+            <h3>Q10: Does flight distance correlate with accident likelihood or severity?</h3>
+            <div class="visualization">
+                <iframe src="q10_distance_severity.html"></iframe>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
