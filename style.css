@@ -7,121 +7,322 @@
 
 /* Body styling */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    background-color: #f5f7fa;
     color: #333;
     line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Header styling */
-header {
+/* Hero section with airplane image */
+/* Hero section with airplane image */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('airplane_image.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px; /* Increased height to give more space */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: flex-end; /* Push content to the bottom */
+    align-items: center;
     text-align: center;
-    padding: 20px;
-    background-color: #007bff;
     color: white;
-    border-bottom: 4px solid #0056b3;
+    padding-bottom: 40px; /* Add padding to avoid content touching the bottom edge */
 }
 
-    header h1 {
-        font-size: 2.5em;
-    }
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.3em;
+}
+/* Navigation bar */
+.navbar {
+    background-color: #0052cc;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.navbar li {
+    margin: 0 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ffd700;
+}
+
+#dark-mode-toggle i {
+    margin-right: 5px;
+}
+
+/* Section styling */
+.section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #0052cc;
+}
 
 /* Introduction section */
-.intro {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.intro p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
 }
-
-    .intro h2 {
-        font-size: 1.8em;
-        margin-bottom: 15px;
-        color: #007bff;
-    }
-
-    .intro p {
-        margin-bottom: 15px;
-        font-size: 1.1em;
-    }
 
 /* Visualization sections */
-.visualization-section {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.visualization-section p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
 }
 
-    .visualization-section h2 {
-        font-size: 1.8em;
-        margin-bottom: 15px;
-        color: #007bff;
-    }
+.visualization-section ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
 
-    .visualization-section p {
-        font-size: 1.1em;
-        margin-bottom: 15px;
-    }
+.visualization-section li {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
 
-    .visualization-section ul {
-        margin-bottom: 20px;
-        padding-left: 20px;
-    }
-
-    .visualization-section li {
-        font-size: 1.1em;
-        margin-bottom: 10px;
-    }
-
-/* Visualization items (for Plotly) */
+/* Visualization items */
 .visualization-item {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
-    .visualization-item h3 {
-        font-size: 1.4em;
-        margin-bottom: 10px;
-        color: #333;
-    }
+.visualization-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
 
-/* Visualization container */
-.visualization {
+.visualization-card {
     border: 1px solid #ddd;
-    padding: 10px;
+    border-radius: 8px;
+    padding: 15px;
     background-color: #f9f9f9;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-    .visualization iframe {
-        width: 100%;
-        height: 541.25px; /* Match Power BI iframe height */
-        border: none;
-    }
+.visualization-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.visualization-card iframe {
+    width: 100%;
+    height: 541.25px;
+    border: none;
+}
+
+/* Insights section */
+.insights {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e6f0fa;
+    border-radius: 8px;
+}
+
+.insights h3, .insights h4 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: #0052cc;
+}
+
+.insights h3 i, .insights h4 i {
+    margin-right: 8px;
+    color: #ffd700;
+}
+
+.collapsible {
+    background-color: #0052cc;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+.collapsible:hover {
+    background-color: #003d99;
+}
+
+.insights-content {
+    display: none;
+    padding: 10px;
+}
+
+.insights-content ul {
+    padding-left: 20px;
+}
+
+.insights-content li, .insights-content p {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #0052cc;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #ffd700;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+#download-pdf {
+    background-color: #ffd700;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+#download-pdf:hover {
+    background-color: #e6c200;
+}
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0052cc;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+#back-to-top:hover {
+    background-color: #003d99;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+body.dark-mode .section {
+    background-color: #2a2a2a;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .visualization-card {
+    background-color: #333;
+    border-color: #444;
+}
+
+body.dark-mode .insights {
+    background-color: #3a4a6a;
+}
+
+body.dark-mode .visualization-item h3 {
+    color: #e0e0e0;
+}
+
+body.dark-mode footer {
+    background-color: #003d99;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
 /* Responsive design */
 @media (max-width: 768px) {
-    header h1 {
+    .hero {
+        height: 300px;
+    }
+
+    .hero-content h1 {
         font-size: 2em;
     }
 
-    .intro, .visualization-section {
-        margin: 10px;
-        padding: 15px;
+    .hero-content p {
+        font-size: 1em;
     }
 
-        .intro h2, .visualization-section h2 {
-            font-size: 1.5em;
-        }
+    .navbar ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar li {
+        margin: 10px 0;
+    }
+
+    .section {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .section h2 {
+        font-size: 1.5em;
+    }
 
     .visualization-item h3 {
         font-size: 1.2em;
     }
 
-    .visualization iframe {
+    .visualization-card iframe {
         height: 400px;
     }
 }
